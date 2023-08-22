@@ -5,7 +5,7 @@ echo -e "OffsetFinder v0.4 - made by c22dev\nCredits : AppInstallerIOS, tihmstar
 # Function to process IPSW URL and extract offsets
 process_ipsw() {
   IPSWURL="$1"
-  rm template_dynamic_info.h > /dev/null
+  rm -f template_dynamic_info.h
   echo "Downloading files..."
   # Download template file
     curl -s -O https://raw.githubusercontent.com/tihmstar/libpatchfinder/master/example/offsetexporter/template_dynamic_info.h
