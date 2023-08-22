@@ -1,29 +1,24 @@
 #!/bin/bash
-
-
-# Download template file
-curl -s -O https://raw.githubusercontent.com/tihmstar/libpatchfinder/master/example/offsetexporter/template_dynamic_info.h
 clear
-echo -e "OffsetFinder v0.3 - made by c22dev\nCredits : AppInstallerIOS, tihmstar"
-# Argument ?
-if [ $# -eq 1 ]; then
+echo -e "OffsetFinder v0.4 - made by c22dev\nCredits : AppInstallerIOS, tihmstar"
+
+# Function to process IPSW URL and extract offsets
+process_ipsw() {
   IPSWURL="$1"
-else
-  read -p "Enter the IPSW URL: " IPSWURL
-fi
-
-echo "Downloading files..."
-
-# IPSW Info DL
-pzb -g BuildManifest.plist "$IPSWURL" > /dev/null
-Identifier=$(/usr/libexec/PlistBuddy -c "print SupportedProductTypes:0" BuildManifest.plist)
-Version=$(/usr/libexec/PlistBuddy -c "print ProductVersion" BuildManifest.plist)
-BuildID=$(/usr/libexec/PlistBuddy -c "print ProductBuildVersion" BuildManifest.plist)
-rm BuildManifest.plist
-
-
-# Offsets extracting
-if [[ "$Identifier" =~ "iPhone".* || "$Identifier" =~ "iPad".* ]]; then            KernelCacheName=$(pzb -l --nosubdirs "$IPSWURL" | grep kernelcache.release | sed 's/^.*kernelcache/kernelcache/')
+  rm template_dynamic_info.h > /dev/null
+  echo "Downloading files..."
+  # Download template file
+    curl -s -O https://raw.githubusercontent.com/tihmstar/libpatchfinder/master/example/offsetexporter/template_dynamic_info.h
+  # IPSW Info DL
+  pzb -g BuildManifest.plist "$IPSWURL" > /dev/null
+  Identifier=$(/usr/libexec/PlistBuddy -c "print SupportedProductTypes:0" BuildManifest.plist)
+  Version=$(/usr/libexec/PlistBuddy -c "print ProductVersion" BuildManifest.plist)
+  BuildID=$(/usr/libexec/PlistBuddy -c "print ProductBuildVersion" BuildManifest.plist)
+  rm BuildManifest.plist
+  
+  # Offsets extracting
+  if [[ "$Identifier" =~ "iPhone".* || "$Identifier" =~ "iPad".* ]]; then
+    KernelCacheName=$(pzb -l --nosubdirs "$IPSWURL" | grep kernelcache.release | sed 's/^.*kernelcache/kernelcache/')
     pzb -g "$KernelCacheName" "$IPSWURL" > /dev/null
     python3 -m pyimg4 im4p extract -i "$KernelCacheName" -o "$Identifier".raw
     rm "$KernelCacheName"
@@ -87,6 +82,25 @@ if [[ "$Identifier" =~ "iPhone".* || "$Identifier" =~ "iPad".* ]]; then         
         --find_vm_page_array_ending_addr %kernelcache__vm_page_array_ending_addr% \
         --find_function_vn_kqfilter %kernelcache__vn_kqfilter% \
         rm "$Identifier".raw
+  fi
+}
+
+# Argument ?
+if [ $# -eq 1 ]; then
+  input="$1"
+else
+  read -p "Enter the IPSW URL or the path to a text file containing IPSW URLs: " input
 fi
-rm *.raw
-rm template_dynamic_info.h
+
+if [[ -f "$input" ]]; then
+  # Input is a file containing links
+  while IFS= read -r link; do
+    process_ipsw "$link"
+  done < "$input"
+else
+  # Input is a single IPSW URL
+  process_ipsw "$input"
+fi
+
+rm *.raw > /dev/null
+rm template_dynamic_info.h > /dev/null
