@@ -1,10 +1,13 @@
 # OffsetFinder
 A sh script that finds offsets for you from an IPSW link :)
 This can also generate offsets for betas.
-<img src="https://i.ibb.co/XykPjLX/Pasted-Graphic.png">
+<img src="https://i.ibb.co/XykPjLX/Pasted-Graphic.png" width=50%>
 
+## Distribution and license
+Despite the lack of a license on the project, if you plan to use the offsets for distribution purposes, a credit is always verry appreciated :) Simply putting my name (c22dev) in your project credits allows me to continue the project as I can see it's being helpful ! Thanks if you do so !
+
+Don't pull request those offsets in an app without editing them (see [this notice](https://github.com/c22dev/OffsetFinder#offsets)). Please also verify those offsets weren't already submited/aren't already existing as this could increase the work for the reviewer without being useful.
 ## Use
-
 ```
 ./run.sh [IPSW URL]
 ```
