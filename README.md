@@ -4,7 +4,7 @@ This can also generate offsets for betas.
 
 Please note that this can only work with arm64e iOS 16 IPSWs.
 
-<img src="https://i.ibb.co/XykPjLX/Pasted-Graphic.png" width=50%>
+<img src="https://i.ibb.co/w422yZ9/Pasted-Graphic.png" width=50%>
 
 ## Distribution and license
 Despite the lack of a license on the project, if you plan to use the offsets for distribution purposes, a credit is always verry appreciated :) Simply putting my name (c22dev) in your project credits allows me to continue the project as I can see it's being helpful ! Thanks if you do so !
