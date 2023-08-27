@@ -1,7 +1,9 @@
 # OffsetFinder
 A sh script that finds offsets for you from an IPSW link :)
 This can also generate offsets for betas.
+
 Please note that this can only work with arm64e iOS 16 IPSWs.
+
 <img src="https://i.ibb.co/XykPjLX/Pasted-Graphic.png" width=50%>
 
 ## Distribution and license
