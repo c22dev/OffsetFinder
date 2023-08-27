@@ -1,6 +1,7 @@
 # OffsetFinder
 A sh script that finds offsets for you from an IPSW link :)
 This can also generate offsets for betas.
+Please note that this can only work with arm64e iOS 16 IPSWs.
 <img src="https://i.ibb.co/XykPjLX/Pasted-Graphic.png" width=50%>
 
 ## Distribution and license
@@ -19,7 +20,7 @@ You can run the script without any argument but it will ask you for the IPSW URL
 If you have trouble installing libpatchfinder or just want it installed for you, try running my [libpatchfinder installer script](https://github.com/c22dev/OffsetFinder/blob/main/lpfinstaller.sh).
 - [partialZipBrowser](https://github.com/tihmstar/partialZipBrowser) installed to PATH (aka pzb)
 - [Python 3](https://formulae.brew.sh/formula/python@3.11) and [PyIMG4](https://github.com/m1stadev/PyIMG4) installed (```brew install python && pip3 install pyimg4```)
-- An IPSW (iOS/iPadOS 16.0->16.6b1) URL (it can be obtained from [ipsw.me](https://ipsw.me/) or [ipswbeta.dev](https://ipswbeta.dev/)) OR a txt file containing one IPSW URL by line
+- An IPSW (iOS/iPadOS 16.0->16.6b1, arm64e) URL (it can be obtained from [ipsw.me](https://ipsw.me/) or [appledv.dev](https://appledb.dev/)) OR a txt file containing one IPSW URL by line
 - An Internet Connection
 
 Note : 
