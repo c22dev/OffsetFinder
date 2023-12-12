@@ -19,7 +19,7 @@ read -p "Do you want to uninstall your current Python installation ? The script 
 mkdir workingLPFI
 cd workingLPFI
 echo "Cloning libpatchfinder and dependencies..."
-git clone --recursive https://github.com/tihmstar/libpatchfinder
+git clone --recursive https://github.com/c22dev/libpatchfinder
 git clone --recursive https://github.com/tihmstar/img4tool
 git clone --recursive https://github.com/tihmstar/img3tool
 git clone --recursive https://github.com/libimobiledevice/libplist
