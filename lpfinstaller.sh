@@ -85,4 +85,12 @@ sudo make install
 cd ..
 # Clean folder
 rm -rf workingLPFI
-echo "It should be installed ! Try running the command offsetexporter"
+
+# Is it installed ?
+if command -v offsetexporter &> /dev/null; then
+    echo "Success ! offsetexporter was successfully installed. Please try running run.sh now."
+    echo "you might need to add your Python bin to PATH."
+else
+    echo "offsetexporter wasn't installed properly. Please contact c22dev on Discord, or try updating script."
+fi
+echo "Job done !"
