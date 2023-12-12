@@ -17,6 +17,10 @@ read -p "Do you want to uninstall your current Python installation ? The script 
     echo "Installing python again..."
     brew install python
  fi
+# pyimg4
+echo "Installing python dependencies..."
+pip3 install pyimg4
+
 mkdir workingLPFI
 cd workingLPFI
 echo "Cloning libpatchfinder and dependencies..."
