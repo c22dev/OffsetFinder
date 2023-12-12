@@ -32,6 +32,7 @@ sudo make install
 cd ../
 echo "WARNING FROM SCRIPT : This package (libinsn) doesnt seem to build correctly on some devices. Instead, you may want to try copy release content from the package's repo to your / directory." 
 cd libinsn
+./autogen.sh
 sudo make
 sudo make install
 cd ../
