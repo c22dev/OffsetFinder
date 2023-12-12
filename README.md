@@ -6,27 +6,33 @@ Please note that this can only work with arm64e iOS 16 IPSWs.
 
 <img src="https://i.ibb.co/w422yZ9/Pasted-Graphic.png" width=50%>
 
-## Distribution and license
-Despite the lack of a license on the project, if you plan to use the offsets for distribution purposes, a credit is always verry appreciated :) Simply putting my name (c22dev) in your project credits allows me to continue the project as I can see it's being helpful ! Thanks if you do so !
-
-Don't pull request those offsets in an app without editing them (see [this notice](https://github.com/c22dev/OffsetFinder#offsets)). Please also verify those offsets weren't already submited/aren't already existing as this could increase the work for the reviewer without being useful.
 ## Use
 ```
 ./run.sh [IPSW URL / Txt file contanining IPSW URLs (one per line)]
 ```
-You can run the script without any argument but it will ask you for the IPSW URL or the txt file in the process.
+You can run the script without any argument but it will ask you for the IPSW URL or the txt file in the process. You won't be able to do anything without installing dependencies. See next section.
+
 ## Dependencies
+If you want to install all the dependencies (building them from source, you can use my [installer script](https://github.com/c22dev/OffsetFinder/blob/main/lpfinstaller.sh)
+
+If you don't trust it (even if it's fully open sourced), you can attempt to get everything manually :
+
+
 - [libpatchfinder](https://github.com/tihmstar/libpatchfinder) from [tihmstar](https://github.com/tihmstar) installed but MakeFile have to be configured with this command : 
 ```./configure --with-offsetexporter```
-
-If you have trouble installing libpatchfinder or just want it installed for you, try running my [libpatchfinder installer script](https://github.com/c22dev/OffsetFinder/blob/main/lpfinstaller.sh).
 - [partialZipBrowser](https://github.com/tihmstar/partialZipBrowser) installed to PATH (aka pzb)
 - [Python 3](https://formulae.brew.sh/formula/python@3.11) and [PyIMG4](https://github.com/m1stadev/PyIMG4) installed (```brew install python && pip3 install pyimg4```)
 - An IPSW (iOS/iPadOS 16.0->16.6b1, arm64e) URL (it can be obtained from [ipsw.me](https://ipsw.me/) or [appledv.dev](https://appledb.dev/)) OR a txt file containing one IPSW URL by line
 - An Internet Connection
 
 Note : 
-This was only tested on macOS Sonoma ; you may not be able to run this script on Linux or older versions of macOS (like really old, Ventura, Monterey and Big Sur should run it fine)
+This was only tested on macOS Sonoma and macOS Ventura; you may not be able to run this script on Linux or older versions of macOS (like really old, Monterey and Big Sur should run it fine)
+
+
+## Distribution and license
+Despite the lack of a license on the project, if you plan to use the offsets for distribution purposes, a credit is always verry appreciated :) Simply putting my name (c22dev) in your project credits allows me to continue the project as I can see it's being helpful ! Thanks if you do so !
+
+Don't pull request those offsets in an app without editing them (see [this notice](https://github.com/c22dev/OffsetFinder#offsets)). Please also verify those offsets weren't already submited/aren't already existing as this could increase the work for the reviewer without being useful.
 
 ## Offsets
 Some offsets (based off thimstar’s template, which is the issue) are wrong. You need to change a few manually. 
