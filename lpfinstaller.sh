@@ -83,11 +83,12 @@ cd libpatchfinder
 sudo make
 sudo make install
 cd ..
-# Clean folder
-rm -rf workingLPFI
 
 # Is it installed ?
 if command -v offsetexporter &> /dev/null; then
+    # Clean folder
+    rm -rf workingLPFI
+    
     echo "Success ! offsetexporter was successfully installed. Please try running run.sh now."
     echo "you might need to add your Python bin to PATH."
 else
