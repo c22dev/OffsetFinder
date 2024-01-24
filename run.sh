@@ -8,7 +8,7 @@ process_ipsw() {
   IPSWURL="$1"
   echo "Downloading files..."
   # Download template file
-  curl -s -O https://raw.githubusercontent.com/tihmstar/libpatchfinder/master/example/offsetexporter/template_dynamic_info.h
+  curl -s -O https://raw.githubusercontent.com/c22dev/OffsetFinder/main/template_dynamic_info.h
   # IPSW Info DL
   pzb -g BuildManifest.plist "$IPSWURL" > /dev/null
   Identifiers=($(/usr/libexec/PlistBuddy -c "print SupportedProductTypes" BuildManifest.plist))
