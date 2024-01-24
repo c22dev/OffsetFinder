@@ -25,8 +25,7 @@ mkdir workingLPFI
 cd workingLPFI
 echo "Cloning libpatchfinder and dependencies..."
 # clone all git repos
-# libpatchfinder is mine cause a fix wasnt pushed for a new version of libgeneral
-git clone --recursive https://github.com/c22dev/libpatchfinder
+git clone --recursive https://github.com/tihmstar/libpatchfinder
 git clone --recursive https://github.com/tihmstar/img4tool
 git clone --recursive https://github.com/tihmstar/img3tool
 git clone --recursive https://github.com/libimobiledevice/libplist
