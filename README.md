@@ -35,7 +35,7 @@ Despite the lack of a license on the project, if you plan to use the offsets for
 Don't pull request those offsets in an app without editing them (see [this notice](https://github.com/c22dev/OffsetFinder#offsets)). Please also verify those offsets weren't already submited/aren't already existing as this could increase the work for the reviewer without being useful.
 
 ## Offsets
-Some offsets (based off thimstar’s template, which is the issue) are wrong. You need to change a few manually. 
+Some offsets stored in this repository (based off thimstar’s template, which is the issue) are wrong.
 These are the wrong ones:
 ```
 ._vm_map__hdr__links__prev
@@ -44,7 +44,7 @@ These are the wrong ones:
 ._vm_map__hdr__links__end
 ```
 It should be + 0x10 instead of + 0x8. 
-
+If you run and obtain the offset by yourself it should already be fixed.
 I won’t generate all offsets again but some little patching can be done easily.
 
 
